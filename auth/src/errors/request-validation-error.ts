@@ -7,7 +7,7 @@ export class RequestValidationError extends CustomError {
     super("Request Validation Error");
     Object.setPrototypeOf(this, RequestValidationError.prototype);
   }
-  serialize() {
+  serialize=()=> {
     return this.reasons.map((e) => ({
       message: e.msg,
       param: e.param,

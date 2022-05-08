@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts"
+    "start": "ts-node-dev src/index.ts",
+    "lint": "standard",
+    "validate": "npm-run-all --parallel test lint",
+    "precommit": "npm run validate",
+    "prepush": "npm run validate"
   },
   "keywords": [],
   "author": "",
