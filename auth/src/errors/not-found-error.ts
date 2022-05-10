@@ -8,6 +8,6 @@ export class NotFoundError extends CustomError {
     Object.setPrototypeOf(this, NotFoundError.prototype);
   }
   serialize() {
-    return [{ message: this.reason ,field:this.url}];
+    return [{ message: `${this.url} ${this.reason}`, field: "url" }];
   }
 }
