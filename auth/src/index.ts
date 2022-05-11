@@ -14,7 +14,7 @@ app.use(
   cookieSession({
     name: "session",
     keys: ["jwt"],
-    secure: true,
+    secure: false,
   })
 );
 

@@ -2,8 +2,9 @@ import { Request, Response, Router } from "express";
 
 const router = Router();
 
-router.get("/signout", (req:Request, res:Response) => {
-  res.send("signout");
+router.post("/signout", (req: Request, res: Response) => {
+  req.session = null;
+  res.send({});
 });
 
 export { router as signOutRouter };

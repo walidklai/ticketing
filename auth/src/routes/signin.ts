@@ -10,14 +10,14 @@ const router = Router();
 router.post(
   "/signin",
   basicCredentialsValidation,
-  (req: Request, res: Response) => {
+  async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
-    const userExists = User.findOne({ email });
+    const userExists = await User.findOne({ email });
 
     if (!userExists) throw new BadRequestError("Wrong Email or Password");
 
-    const passwordMatch = Password.compare(userExists.password, password);
+    const passwordMatch = await Password.compare(userExists.password, password);
 
     if (!passwordMatch) throw new BadRequestError("Wrong Email or Password");
 

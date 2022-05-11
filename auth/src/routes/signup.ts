@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import { BadRequestError } from "../errors/bad-request-error";
 import { User } from "../models/UserModel";
-import { basicCredentialsValidation } from "../validation/inputs/auth-inputs";
+import { basicCredentialsValidation } from "../middlewares/inputsValidation";
 import jwt from "jsonwebtoken";
 
 const router = Router();
