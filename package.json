@@ -96,10 +96,9 @@
     "which-boxed-primitive": "^1.0.2"
   },
   "scripts": {
-    "test": "jest",
     "lint": "eslint ./auth/src/** --ext .ts --fix",
     "prepare": "husky install",
-    "pre-commit":"npm run lint"
+    "pre-commit":"npm run lint && cd auth && npm run test"
   },
   "repository": {
     "type": "git",
